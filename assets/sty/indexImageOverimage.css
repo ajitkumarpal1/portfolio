@@ -1,0 +1,148 @@
+:root {
+  --timing: 400ms;
+  --rotation: 20deg;
+}
+
+
+
+img {
+  max-width: 100%;
+}
+
+.avtar {
+  position: absolute;
+  transform-style: preserve-3d;
+  /* float: right; */
+
+  border: 30px solid;
+  border-color: #C5FAD5 #C5FAD5 #FFFFD2 #FFFFD2;
+  transform: rotate(45deg) translate(-50%, calc(-50% + 225px));
+  margin: auto 0;
+  border-radius: 50% 0;
+  top: 50%;
+  left: 50%;
+  /* margin-left: calc(50% - 180px); */
+  margin-right: -180px;
+  background-color: #AA96DA;
+  transition: border-radius var(--timing) ease;
+}
+
+
+
+.ajit {
+
+  width: 300px;
+  aspect-ratio: 1/1;
+  /* background-image: url("/assets/ajit-on-dagobah.jpg"); */
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate(-45deg);
+  transition: rotate var(--timing) ease;
+
+  transition: transform 300ms ease;
+}
+
+.ajit:hover .bg-image {
+  transform: translateZ(0) rotate(1080deg);
+  /* rotate: x var(--rotation); */
+}
+
+.ajit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-image: radial-gradient(circle, transparent, black);
+  opacity: 0;
+  transition: opacity var(--timing);
+  border-radius: 50%;
+}
+
+.ajit:hover::before {
+  opacity: 1;
+}
+
+.ajit::after {
+  content: "";
+  position: absolute;
+  inset: 80% 0.5rem 0.5rem;
+  translate: 0;
+  transform: translateZ(-100px);
+  background: #514a61;
+  filter: blur(1rem);
+  opacity: 0;
+  transition: rotate var(--timing), translate var(--timing);
+}
+
+.ajit:hover::after {
+  opacity: 1;
+}
+
+.ajit:hover::after {
+  rotate: x calc(var(--rotation) * -1);
+  translate: 0 60px;
+}
+
+
+.bg-image {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  overflow: overlay;
+  border-radius: 50%;
+
+  transition: transform var(--timing) ease;
+}
+
+.logo,
+.front-image {
+  position: absolute;
+}
+
+.logo {
+  z-index: 1000;
+  filter: invert(1);
+  width: 15%;
+  margin-inline: auto;
+  inset: auto 0 2rem;
+  transform: translateY(0rem) translateZ(20px);
+  transition: var(--timing);
+}
+
+.ajit:hover .logo {
+  transform: translateY(-2rem) translateZ(89px);
+  rotate: x calc(var(--rotation) * -1);
+}
+
+.front-image {
+  position: absolute;
+  scale: 1.125;
+  transform-origin: bottom;
+  opacity: 0;
+  z-index: 100;
+  transition: var(--timing);
+  width: 70%;
+  margin-left: 45px;
+  bottom: 0;
+}
+
+.ajit:hover .front-image {
+  opacity: 1;
+  transform: translateY(-2rem) translateZ(-10px);
+  rotate: x calc(var(--rotation) * -1);
+  overflow: visible;
+}
+
+.inspiration {
+  font-family: system-ui;
+  text-align: center;
+  max-width: 25ch;
+  margin-block-start: 3rem;
+  margin-inline: auto;
+}
