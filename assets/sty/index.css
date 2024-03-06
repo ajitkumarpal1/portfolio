@@ -40,7 +40,8 @@
 .novContent li {
 
     font-size: xx-large;
-    margin: 0 20px;
+    padding: 0 15px;
+    margin: 0 5px;
 }
 
 .menu-button {
@@ -60,7 +61,7 @@
     margin-right: 10%;
 } */
 .midCon {
-    
+    position: relative;
     /* min-height: calc(100vh - 150px); */
     min-height: 686px;
     /* min-height: calc(100vh - 150px); */
@@ -95,26 +96,36 @@
 } */
 
 .list ul li{
-    text-align: left;
-    transition: text-align 500ms;
-}
-.list ul li:hover {
     text-align: center;
-    text-decoration: underline #AA96DA;
-
-    background-color: #C5FAD5;
     border-radius: 15px;
+    transition: text-align 500ms,background-color 500ms ease;
+    
     a {
-        color: #AA96DA;
+        min-height: 100%;
     }
 }
+.list ul li:hover {
+    
+    text-decoration: underline #AA96DA;
+    background-color: #C5FAD5;
+    cursor: pointer;
+    a {
+        color: #AA96DA;
+        
+    }
+}
+
 @media (max-width: 1000px) {
+    .novContent li {
+        padding: 0 15px;
+        margin: 4px 5px;
+    }
     .left-text {
         
        margin: 20px 30% 0 30%;
     }
     .avtar {
-        position: relative;
+        position: static;
         transform-style: preserve-3d;
         /* float: right; */
         border: 30px solid;
@@ -210,7 +221,7 @@
     #menu:checked~nav .list ul {
         position: absolute;
         background-color: #AA96DA;
-        min-height: 250px;
+        min-height: 290px;
         /* Adjust the max-height to a sufficiently large value */
         margin-top: 0;
     }
