@@ -114,8 +114,18 @@
         
     }
 }
-
+@media (max-width: 766px){
+    .midCon {
+        flex-direction: column;
+    }
+    .con-lef {
+        width: 90%;
+    }
+}
 @media (max-width: 1000px) {
+    .con-lef p {
+        text-align: justify;
+    }
     .novContent li {
         padding: 0 15px;
         margin: 4px 5px;
@@ -125,6 +135,7 @@
        margin: 20px 30% 0 30%;
     }
     .avtar {
+        display: none;
         position: static;
         transform-style: preserve-3d;
         /* float: right; */
@@ -134,7 +145,6 @@
         margin: auto 0;
         border-radius: 0 50%;
         margin-left: auto;
-        margin-right: -180px;
         background-color: #AA96DA;
     }
 
